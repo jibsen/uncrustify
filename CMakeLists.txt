@@ -17,6 +17,8 @@ include(CheckCXXSymbolExists)
 include(CheckTypeSize)
 include(CTest)
 
+set(PACKAGE_VERSION "0.63")
+
 #
 # Check compiler flags
 #
@@ -114,21 +116,12 @@ else()
 
   check_type_size(_Bool _BOOL LANGUAGE C)
 
-  configure_file(${CMAKE_CURRENT_BINARY_DIR}/config.h.in config.h @ONLY)
+  configure_file(src/config.h.in config.h @ONLY)
 endif()
 
 #
 # Generate uncrustify_version.h
 #
-file(STRINGS configure.ac PACKAGE_VERSION REGEX "^AC_INIT")
-
-if(${PACKAGE_VERSION} MATCHES "^AC_INIT\\(uncrustify,([^,]+),")
-  set(PACKAGE_VERSION "${CMAKE_MATCH_1}")
-  message(STATUS "PACKAGE_VERSION: ${PACKAGE_VERSION}")
-else()
-  message(FATAL_ERROR "Unable to determine PACKAGE_VERSION")
-endif()
-
 configure_file(src/uncrustify_version.h.in uncrustify_version.h @ONLY)
 
 #
