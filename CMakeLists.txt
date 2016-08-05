@@ -58,13 +58,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 if(WIN32)
   # Windows builds use windows_compat.h instead of config.h
 else()
-  # Generate CMake config.h.in
-  file(READ src/config.h.in config_lines)
-  string(REPLACE "#undef" "#cmakedefine" config_lines "${config_lines}")
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/config.h.in ${config_lines})
-
-  unset(config_lines)
-
   # Generate config.h
   set(avail_headers "")
 
