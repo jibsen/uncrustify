@@ -74,42 +74,6 @@ configuration to build. You can also do this while building from the command
 line with `cmake --build . --config Release`.
 
 
-Building using Autotools
-------------------------
-
-Quick start:
-```
-$ ./autogen.sh
-$ ./configure
-$ make
-```
-
-The executable is src/uncrustify.
-Copy that to your ~/bin/ folder or wherever you want.
-
-
-Building the program using Xcode on Mac OS X
----------------------------------------------
-
-You can of course just open the Xcode project and build uncrustify using the
-default 'Debug' configuration but if you want to install it the 'Install'
-configuration will not work from within Xcode.
-
-For that you will have to use the Xcode command line tool 'xcodebuild'.
-
-To do that, cd into the uncrustify project folder where uncrustify.xcodeproj
-resides and enter the following command:
-
-```
-$ sudo xcodebuild -configuration 'Install'
-```
-
-You will be prompted for the root level password. By doing this you will install
-uncrustify into /usr/local/bin. The install location can be changed by editing
-the Build Settings for the uncrustify target. The setting you need to change is
-called, surprisingly enough, 'Installation Directory'.
-
-
 Configuring the program
 -----------------------
 
