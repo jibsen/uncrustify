@@ -4,7 +4,7 @@ Running the tests
 - All tests reside in the tests/ directory tree.
 
 - Running the tests is as simple as:
-    $ make check
+    $ make test
 
 - Alternatively, the test scripts can be run directly:
     $ cd tests
@@ -12,7 +12,7 @@ Running the tests
 
 - To run the only the tests associated with language X ("cpp", "java", etc.):
     $ cd tests
-    $ ./run_tests.py X  
+    $ ./run_tests.py X
 
 Adding new tests
 ----------------
@@ -46,7 +46,7 @@ Adding new tests
   tests/config/ger-full-cmt-reflow.cfg and 'c/cmt-not-a-boxed-cmt.c'
   will be fetched from tests/c/cmt-not-a-boxed-cmt.c when you run
   the tests.
-  
+
 
 Features
 --------
@@ -56,7 +56,7 @@ Features
 
   # clark's style - blank lines before and after flow control,
   indented comments:
-  
+
     20100 clark.cfg c/i2c-core.c
     20101 clark.cfg c/comment-indent.c
     20102 clark.cfg c/indent.cpp
@@ -102,4 +102,3 @@ Features
 
 - Tip: There are also a few options to run_tests.py that can
   help. Most interesting is '-d' will run 'diff' if the test fails.
-

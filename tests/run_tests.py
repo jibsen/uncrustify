@@ -222,13 +222,13 @@ def main(argv):
 
     if not args.exe:
         if os.name == "nt":
-            bin_path = '../win32/{0}/uncrustify.exe'
+            bin_path = '../build/{0}/uncrustify.exe'
             if args.g:
                 bin_path = bin_path.format('Debug')
             else:
                 bin_path = bin_path.format('Release')
         else:
-            bin_path = '../src/uncrustify'
+            bin_path = '../build/uncrustify'
         args.exe = bin_path
 
     if not os.path.isabs(args.exe):
